@@ -13,6 +13,7 @@
   min-width: 100%;
   flex-direction: row;
   height: calc(100% - 48px);
+  background-color: #e8eaf5;
   .nav {
     transition: all ease 300ms;
     flex-shrink: 0;
@@ -23,7 +24,7 @@
   }
   .page {
     flex: 1 0 auto;
-    background-color: #e8eaf5;
+    
   }
 }
 
