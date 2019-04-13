@@ -166,7 +166,7 @@ class LibzyAppBar extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar variant="dense">
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer" onClick={this.props.onMenuButtonClick}>
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>

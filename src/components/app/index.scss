@@ -8,6 +8,25 @@
   flex: 1 0 auto;
 }
 
+#content {
+  display: inline-flex;
+  min-width: 100%;
+  flex-direction: row;
+  height: calc(100% - 48px);
+  .nav {
+    transition: all ease 300ms;
+    flex-shrink: 0;
+    background-color: white;
+    width: 240px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .page {
+    flex: 1 0 auto;
+    background-color: #e8eaf5;
+  }
+}
+
 #footer {
   flex-shrink: 0;
   background-color: #20232a;

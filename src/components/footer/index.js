@@ -8,7 +8,6 @@ export default class Footer extends Component {
         <div>dealsjdaslkdjsklajd</div>
         <div>dealsjdaslkdjsklajd</div>
         <div>dealsjdaslkdjsklajd</div>
-        <div>dealsjdaslkdjsklajd</div>
       </>
     );
   }
