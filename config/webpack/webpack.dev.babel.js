@@ -31,6 +31,9 @@ module.exports = {
         hot: true,
         historyApiFallback: true
     },
+    output: {
+      publicPath: '/'
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ]

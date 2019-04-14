@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Divider, withStyles } from '@material-ui/core';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import { List, ListItem, ListItemIcon, ListItemText, Icon } from '@material-ui/core';
+import { Link } from "react-router-dom";
 
 export default class Nav extends Component {
+
+  renderItem = (item) => {
+    if (item.component) {
+      return (
+        <ListItem button to={"/" + this.props.basePath + "/" + item.path} component={Link}>
+          <ListItemIcon><Icon>{item.icon}</Icon></ListItemIcon>
+          <ListItemText primary={item.text} />
+        </ListItem>
+      );
+    }
+    else{
+      // Draw sub menu here. 
+    }
+  }
+
   render() {
     return (
-      <div>
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <InboxIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <InboxIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </div>
-    );
+      <List dense>
+        {this.props.tree.map(item => this.renderItem(item))}
+      </List>
+    )
   }
 }
