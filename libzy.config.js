@@ -1,5 +1,5 @@
 const MainPage = require('./src/pages/main-page').default;
-const GetStarted = require('./src/pages/docs/get-started').default;
+const GetStarted = require('./src/pages/docs/get-started.md').default;
 const Install = require('./src/pages/docs/install').default;
 
 module.exports = {

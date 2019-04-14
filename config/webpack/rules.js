@@ -15,6 +15,13 @@ module.exports = [
     ]
   },
   {
+    test: /\.mdx?$/,
+    use: [
+      'babel-loader',
+      '@mdx-js/loader'
+    ]
+  },
+  {
     test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
     exclude: /node_modules/,
     loader: 'file-loader'
