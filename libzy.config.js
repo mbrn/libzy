@@ -27,5 +27,15 @@ module.exports = {
         }
       ]
     }
-  ]
+  ],
+  theme: {
+    palette: {
+      primary: {
+        main: '#01579b'
+      },
+      secondary: {
+        main: '#e65100',
+      },
+    }
+  }
 }

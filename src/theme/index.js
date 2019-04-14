@@ -1,14 +1,10 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import LibzyConfig from '../../libzy.config';
 
 const theme = createMuiTheme({
   palette: {
-    primary: {
-      main: '#01579b',
-    },
-    secondary: {
-      main: '#e65100',
-    },
+    primary: LibzyConfig.theme.palette.primary,
+    secondary: LibzyConfig.theme.palette.secondary,
   },
   props: {
     MuiAppBar: {
