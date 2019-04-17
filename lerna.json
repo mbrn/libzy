@@ -1,9 +1,0 @@
-{
-  "packages": [
-    "lib",
-    "libzy"
-  ],
-  "npmClient": "yarn",
-  "useWorkspaces": true,
-  "version": "0.0.24"
-}

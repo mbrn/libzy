@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { List, ListItem, ListItemIcon, ListItemText, Icon } from '@material-ui/core';
+import { List, ListItem, ListItemIcon, ListItemText, Icon, withStyles } from '@material-ui/core';
 import { Link } from "react-router-dom";
 
-export default class Nav extends Component {
+class Nav extends Component {
 
   renderItem = (item) => {
     if (item.component) {
@@ -20,9 +20,18 @@ export default class Nav extends Component {
 
   render() {
     return (
-      <List dense>
+      <List dense className={this.props.classes.list}>
         {this.props.tree.map(item => this.renderItem(item))}
       </List>
     )
   }
 }
+
+const styles = theme => ({
+  list: {
+    paddingTop: 0,
+    paddingBottom: 0
+  },  
+});
+
+export default withStyles(styles)(Nav);
