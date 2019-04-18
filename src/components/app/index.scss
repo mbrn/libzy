@@ -12,23 +12,25 @@
   display: inline-flex;
   min-width: 100%;
   flex-direction: row;
-  height: calc(100% - 48px - 40px);
+  height: calc(100% - 48px);
   background-color: #e8eaf5;
-  padding: 20px 0px;
   .nav {
     transition: all ease 300ms;
     flex-shrink: 0;
     background-color: white;
     width: 240px;
-    height: 100%;
+    height: calc(100% - 40px);
     overflow: hidden;    
-    border-radius: 0px 10px 10px 0px;
+    // border-radius: 0px 10px 10px 0px;
+    border-radius: 5px;
+    margin: 20px 0px 20px 5px;
   }
   .page {
     flex: 1 0 auto;
     padding: 0px 20px;
-    max-width: 1000px;
-    height: 100%;
+    max-width: 960px;
+    height: calc(100% - 40px);
+    margin: auto;
   }
 }
 

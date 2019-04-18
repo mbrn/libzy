@@ -6,7 +6,7 @@ import Nav from '../nav';
 export default class PageContainer extends Component {
   getRoute = (item) => {
     if (item.component) {
-      return <Route exact path={"/" + item.path} component={item.component} />
+      return <Route exact path={"/" + item.path} render={props => <item.component {...props} config={LibzyConfig} data={item.data}/> }/>
     }
     else {
       return (

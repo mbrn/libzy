@@ -10,6 +10,12 @@ const theme = createMuiTheme({
     MuiAppBar: {
       elevation: 0,
     },
+    MuiCard: {
+      elevation: 0
+    },
+    MuiPaper: {
+      elevation: 0
+    },
   },
 });
 

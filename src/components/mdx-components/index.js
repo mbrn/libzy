@@ -65,24 +65,18 @@ export default {
   </div>,
   table: (props) => <table
     style={{
-      borderCollapse: 'collapse',
-      border: '1px solid',
-      borderColor: '#DEE5EE',
-      borderRadius: 3
+      width: '100%'
     }}>
     {props.children}
   </table>,
   thead: (props) => <thead
     style={{
-      backgroundColor: 'white',
-      borderCollapse: 'collapse',
-      border: '1px solid',
-      borderColor: '#DEE5EE'
+      backgroundColor: 'white',            
     }}>
     {props.children}
   </thead>,
-  th: (props) => <th style={{ padding: '15px 30px 15px 30px' }}><Typography variant="subtitle1" style={{ color: '#65819D' }}>{props.children}</Typography></th>,
+  th: (props) => <th style={{ padding: 10 }}><Typography variant="subtitle1" style={{ color: '#65819D' }}>{props.children}</Typography></th>,
   tbody: (props) => <tbody style={{backgroundColor: '#f9f9f9'}}>{props.children}</tbody>,
-  tr: (props) => <tr style={{ padding: 20, borderTop: '1px solid #DEE5EE' }}>{props.children}</tr>,
-  td: (props) => <td style={{ padding: 10, textAlign: 'center' }} ><Typography variant="subtitle1" style={{ color: '#91A0B1' }}>{props.children}</Typography></td>,
+  tr: (props) => <tr>{props.children}</tr>,
+  td: (props) => <td style={{ padding: 5, textAlign: 'center' }} ><Typography variant="subtitle1" style={{ color: '#91A0B1' }}>{props.children}</Typography></td>,
 }

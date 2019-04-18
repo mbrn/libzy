@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LibzyAppBar from '../app-bar';
-import Nav from '../nav';
 import PageContainer from '../page-container';
 import Footer from '../footer';
 import './index.scss';
