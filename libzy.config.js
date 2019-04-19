@@ -63,5 +63,8 @@ module.exports = {
         main: '#e65100',
       },
     }
+  },
+  options: {
+    routerType: 'hash', // hash | browser
   }
 }
