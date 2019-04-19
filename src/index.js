@@ -9,7 +9,7 @@ import './index.scss';
 import App from './components/app';
 import LibzyConfig from '../libzy.config';
 
-const Router = BrowserRouter;
+let Router = BrowserRouter;
 if(LibzyConfig.options.routerType === "hash") {
   Router = HashRouter;
 }
