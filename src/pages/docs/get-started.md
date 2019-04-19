@@ -1,20 +1,13 @@
 
-# H1
+# Get Started
 
-## H2
+Libzy is a boilerplate that makes documentation faster. It uses material-ui as UI component. 
 
-Text1asdasd
+## Key Features
 
-[mainPage](/)
-
-[github](https://github.com)
-
-> Blockquote
-
-* list item
-* list item
-
-| column1 | column2 |
-|:--------|:--------|
-| data1   | data2   |
-| data3   | data4   |
+* Create project with libzy cli
+* Markdown support
+* MDX support
+* react-live support
+* Build ready
+* Easy configurable

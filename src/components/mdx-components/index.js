@@ -1,7 +1,10 @@
 import React from 'react';
-import { Icon, Paper, List, ListItem, ListItemIcon, ListItemText, Typography } from '@material-ui/core';
+import { Icon, IconButton, Paper, List, ListItem, ListItemIcon, ListItemText, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import LibzyConfig from '../../../libzy.config';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/mode/javascript/javascript'
+import 'codemirror/mode/jsx/jsx'
 
 export default {
   h1: (props) => <div>
@@ -71,12 +74,75 @@ export default {
   </table>,
   thead: (props) => <thead
     style={{
-      backgroundColor: 'white',            
+      backgroundColor: 'white',
     }}>
     {props.children}
   </thead>,
   th: (props) => <th style={{ padding: 10 }}><Typography variant="subtitle1" style={{ color: '#65819D' }}>{props.children}</Typography></th>,
-  tbody: (props) => <tbody style={{backgroundColor: '#f9f9f9'}}>{props.children}</tbody>,
+  tbody: (props) => <tbody style={{ backgroundColor: '#f9f9f9' }}>{props.children}</tbody>,
   tr: (props) => <tr>{props.children}</tr>,
   td: (props) => <td style={{ padding: 5, textAlign: 'center' }} ><Typography variant="subtitle1" style={{ color: '#91A0B1' }}>{props.children}</Typography></td>,
+  inlineCode: (props) => <code
+    style={{
+      backgroundColor: 'rgb(239, 242, 247)',
+      padding: '3px 5px',
+      color: 'indianred',
+      borderRadius: 3
+    }}>
+    {props.children}
+  </code>,
+  code: (props) => {
+    if (props.className === "language-console") {
+      return (
+        <div>
+          <Paper elevation={0}
+            style={{
+              padding: 10,
+              color: '#DDD',
+              backgroundColor: 'rgb(40, 44, 52)',
+              fontFamily: 'Inconsolata, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
+              fontSize: 16,
+              whiteSpace: 'initial'
+            }}>
+            <div style={{ display: 'flex' }}>
+              <div style={{ flex: 1 }}>
+                {props.children}
+              </div>
+              <IconButton style={{ padding: 0 }} disableRipple onClick={() => navigator.clipboard.writeText(props.children)}>
+                <Icon style={{ color: '#FFFFFF99', fontSize: 16 }}>file_copy</Icon>
+              </IconButton>
+            </div>
+          </Paper>
+          <br />
+        </div>
+      );
+    }
+    else if (props.className === "language-javascript") {
+      return <CodeMirror
+        value={props.children.trim()}
+        options={{
+          mode: 'javascript',
+          theme: 'lucario',
+          lineNumbers: false,
+          readOnly: true
+        }}
+        onChange={(editor, data, value) => {
+        }} />;
+    }
+    else if (props.className === "language-jsx") {
+      return <CodeMirror
+        value={props.children.trim()}
+        options={{
+          mode: 'jsx',
+          theme: 'lucario',
+          lineNumbers: false,
+          readOnly: true
+        }}
+        onChange={(editor, data, value) => {
+        }} />;
+    }
+    else {
+      return <div>{props.children}</div>;
+    }
+  }
 }
