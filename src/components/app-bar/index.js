@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from "react-router-dom";
 import LibzyConfig from '../../../libzy.config';
 
 const styles = theme => ({
@@ -81,9 +82,11 @@ class LibzyAppBar extends React.Component {
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer" onClick={this.props.onMenuButtonClick}>
               <MenuIcon />
             </IconButton>
-            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              {LibzyConfig.title}
-            </Typography>
+            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+              <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+                {LibzyConfig.title}
+              </Typography>
+            </Link>
 
             <div className={classes.grow} />
             <div className={classes.search}>
