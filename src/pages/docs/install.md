@@ -9,7 +9,7 @@ npm install material-table --save
 ## 2. Create a documentation project
 
 ```console
-libzy create <project-name>
+libzy create
 ```
 
 ## 3. Configure project 

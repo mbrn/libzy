@@ -1,6 +1,6 @@
 {
   "name": "libzy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A boilerplate to document a library",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "lint:fix": "eslint ./src/**/**.js --fix",
     "test": "jest",
     "test:watch": "npm run test --watch",
-    "test:cover": "npm run test --coverage"
+    "test:cover": "npm run test --coverage",
+    "libzy": "libzy version"
   },
   "author": "",
   "license": "ISC",
@@ -71,6 +72,13 @@
     "react-dom": "^16.8.6",
     "react-live": "^2.0.1",
     "react-router-dom": "^5.0.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "chalk": "2.4.1",
+    "commander": "2.19.0",
+    "inquirer": "6.2.0",
+    "fs-extra": "5.0.0"
+  },
+  "bin": {
+    "libzy": "./bin/index.js"
   }
 }
