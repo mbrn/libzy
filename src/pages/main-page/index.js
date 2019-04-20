@@ -18,21 +18,18 @@ class MainPageInner extends Component {
         <div className={this.props.classes.features}>
           <Grid container spacing={0}>
             {this.props.data.features.map(feature => (
-              <Grid item xs={12} sm={6} md={4} lg={3} className={this.props.classes.feature}>
+              <Grid item xs={12} sm={6} md={4} lg={6} className={this.props.classes.feature}>
                 <Paper className={this.props.classes.featureContent}>
                   <Typography variant="h6" className="title">{feature.title}</Typography>
-                  <Typography variant="subheading" className="text">{feature.text}</Typography>
+                  <Typography variant="subtitle2" className="text">{feature.text}</Typography>
                   {feature.button &&
                     <div className={this.props.classes.featureActions}>
                       <Link to={feature.button.path} style={{ textDecoration: 'none' }}>
-                        <Button className={this.props.classes.featureButton} color="primary">{feature.button.text}</Button>
+                        <Button className={this.props.classes.featureButton}>{feature.button.text}</Button>
                       </Link>
                     </div>
                   }
-
                 </Paper>
-
-
               </Grid>
             ))}
 
@@ -74,10 +71,11 @@ const styles = theme => ({
     },
   },
   features: {
-    margin: '10px 0px',
+    margin: 'auto',
+    maxWidth: 960,
   },
   feature: {
-    padding: '12px 5px',
+    padding: '15px 5px',
   },
   featureContent: {
     display: 'flex',
@@ -90,9 +88,9 @@ const styles = theme => ({
       padding: 5,
     },
     '& .text': {
-      color: '#65819D',
+      color: '#65819D99',
       padding: '5px 5px 0',
-      flex: 1
+      flex: 1,      
     }
   },
   featureActions: {
@@ -101,6 +99,7 @@ const styles = theme => ({
   },
   featureButton: {
     textTransform: 'none',
+    color: '#65819D',
   }
 });
 

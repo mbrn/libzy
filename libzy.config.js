@@ -1,6 +1,7 @@
 const MainPage = require('./src/pages/main-page').default;
 const GetStarted = require('./src/pages/docs/get-started.md').default;
 const Install = require('./src/pages/docs/install.md').default;
+const LiveCodeExample = require('./src/pages/docs/live-code-example.mdx').default;
 
 module.exports = {
   title: 'Libzy',
@@ -40,16 +41,19 @@ module.exports = {
       path: 'docs',
       tree: [
         {
-          icon: 'save',
           text: 'Get Started',
           path: 'get-started',
           component: GetStarted
         },
         {
-          icon: 'setup',
           text: 'Install',
           path: 'install',
           component: Install
+        },
+        {
+          text: 'Live Code Example',
+          path: 'live-code-example',
+          component: LiveCodeExample
         }
       ]
     }

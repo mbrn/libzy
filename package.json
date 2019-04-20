@@ -1,6 +1,6 @@
 {
   "name": "libzy",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A boilerplate to document a library",
   "main": "index.js",
   "scripts": {
@@ -53,6 +53,7 @@
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.17.0",
+    "raw-loader": "^2.0.0",
     "react-testing-library": "^6.1.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
