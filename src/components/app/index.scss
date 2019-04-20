@@ -9,6 +9,7 @@
 }
 
 #content {
+  margin-bottom: 30px;
   display: inline-flex;
   min-width: 100%;
   flex-direction: row;
@@ -35,6 +36,8 @@
 }
 
 #footer {
+  
   flex-shrink: 0;
-  background-color: #20232a;
+  background-color: #2b3e50;
+  padding: 15px;  
 }
