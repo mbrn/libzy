@@ -10,10 +10,7 @@ import { LiveProvider, LiveEditor } from 'react-live';
 
 export default {
   h1: (props) => <div>
-    <Typography
-      variant="h4" {...props} 
-      style={{ color: '#65819D' }}
-    />
+    <Typography variant="h4" {...props}/>
     <div style={{
       width: 50,
       borderBottom: '4px solid ' + LibzyConfig.theme.palette.primary.main,
@@ -21,13 +18,14 @@ export default {
     }}></div>
     <br />
   </div>,
-  h2: (props) => <div><Typography variant="h6" style={{ color: '#65819D' }} {...props} /></div>,
-  p: (props) => <div><Typography variant="subtitle2" {...props} style={{ color: '#65819D' }} /><br /></div>,
+  h2: (props) => <div><Typography variant="h6" {...props} /></div>,
+  h3: (props) => <div><Typography variant="subtitle1" {...props} /></div>,
+  p: (props) => <div><Typography variant="subtitle2" {...props} /><br /></div>,
   ul: (props) => <List>{props.children}</List>,
   li: (props) => (
     <ListItem dense style={{paddingTop: 4, paddingBottom: 4}}>
-      <ListItemIcon style={{ marginRight: 0, marginTop: 5, alignSelf: 'flex-start' }}><Icon style={{ color: '#65819D', fontSize:10 }} iconSize="small">brightness_1</Icon></ListItemIcon>
-      <ListItemText style={{paddingLeft: 8}}><Typography variant="subtitle2" {...props} style={{ color: '#65819D' }} /></ListItemText>
+      <ListItemIcon style={{ marginRight: 0, marginTop: 5, alignSelf: 'flex-start' }}><Icon style={{ fontSize:10 }} iconSize="small">brightness_1</Icon></ListItemIcon>
+      <ListItemText style={{paddingLeft: 8}}><Typography variant="subtitle2" {...props} /></ListItemText>
     </ListItem>
   ),
   a: (props) => {
@@ -81,10 +79,10 @@ export default {
     }}>
     {props.children}
   </thead>,
-  th: (props) => <th style={{ padding: 10 }}><Typography variant="subtitle1" style={{ color: '#65819D' }}>{props.children}</Typography></th>,
+  th: (props) => <th style={{ padding: 10 }}><Typography variant="subtitle1">{props.children}</Typography></th>,
   tbody: (props) => <tbody style={{ backgroundColor: '#f9f9f999' }}>{props.children}</tbody>,
   tr: (props) => <tr>{props.children}</tr>,
-  td: (props) => <td style={{ padding: 5 }} ><Typography variant="subtitle2" style={{ color: '#65819D' }}>{props.children}</Typography></td>,
+  td: (props) => <td style={{ padding: 5 }} ><Typography variant="subtitle2">{props.children}</Typography></td>,
   inlineCode: (props) => <code
     style={{
       backgroundColor: 'rgb(239, 242, 247)',

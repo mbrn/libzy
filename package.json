@@ -64,6 +64,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
     "codemirror": "^5.39.2",
