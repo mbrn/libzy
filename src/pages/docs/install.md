@@ -3,7 +3,7 @@
 ## 1. Install libzy
 
 ```console
-npm install material-table --save
+npm install -g libzy
 ```
 
 ## 2. Create a documentation project

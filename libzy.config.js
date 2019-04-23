@@ -7,6 +7,7 @@ module.exports = {
   title: 'Libzy',
   subTitle: 'Make documentation faster',
   github: 'https://github.com/mbrn/libzy',  
+  githubShort: 'mbrn/libzy',  
   menuTree: [
     {
       path: '',
