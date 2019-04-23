@@ -5,8 +5,7 @@
  * Require dependencies
  *
  */
-const program = require('commander'),
-  chalk = require("chalk");
+const program = require('commander')
 const
   create = require('./commands/create').default,
   version = require('./commands/version').default;
