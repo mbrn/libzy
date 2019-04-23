@@ -7,6 +7,9 @@
 		"packages/*"
 	],
   "scripts": {    
+    "publish": "gulp publish",
+    "version": "gulp version",
+    "versions": "gulp versions"
   },
   "author": "",
   "license": "ISC",
