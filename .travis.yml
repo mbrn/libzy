@@ -1,0 +1,34 @@
+language: node_js
+sudo: false
+node_js:
+ - 10
+install:
+  - npm install lerna -g
+script:  
+  - lerna bootstrap
+jobs:
+  include:
+    - stage: libzy-lib publish
+      node_js: "10"
+      script: echo "Deploying libzy-lib to npm ..."
+      before_deploy: cd packages/libzy-lib
+      after_deploy: cd ../../
+      deploy:
+        provider: npm
+        email: "mehmetbaran@mehmetbaran.net"
+        api_key: "$NPM_TOKEN"
+        skip_cleanup: true
+        on:
+          branch: master
+    - stage: libzy publish
+      node_js: "10"
+      script: echo "Deploying libzy to npm ..."
+      before_deploy: cd packages/libzy
+      after_deploy: cd ../../
+      deploy:
+        provider: npm
+        email: "mehmetbaran@mehmetbaran.net"
+        api_key: "$NPM_TOKEN"
+        skip_cleanup: true
+        on:
+          branch: master
