@@ -61,7 +61,9 @@ class LiveCodeInner extends Component {
                 <LiveError className={this.props.classes.errorBlock} />
               </div>
             </Collapse>
-            <LivePreview className={this.props.classes.preview} />
+            <div className={this.props.classes.preview}>
+              <LivePreview className={this.props.classes.livePreview} />
+            </div>
           </Collapse>
         </Paper>
       </LiveProvider>
@@ -72,7 +74,8 @@ class LiveCodeInner extends Component {
 const styles = theme => ({
   root: {
     marginTop: 10,
-    padding: 10
+    padding: 10,
+    display: 'grid'
   },
   topBar: {
     display: 'flex',
@@ -107,7 +110,12 @@ const styles = theme => ({
     marginTop: 5,
     backgroundColor: '#e8eaf5',
     borderRadius: 5,
-    padding: 5
+    padding: 5,
+    display: 'grid'
+  },
+  livePreview: {
+    maxWidth: '100%',
+    overflow: 'auto'
   }
 });
 

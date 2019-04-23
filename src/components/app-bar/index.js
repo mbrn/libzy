@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from "react-router-dom";
 import LibzyConfig from '../../../libzy.config';
+import { Tooltip } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
@@ -79,32 +80,38 @@ class LibzyAppBar extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar variant="dense">
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer" onClick={this.props.onMenuButtonClick}>
-              <MenuIcon />
-            </IconButton>
+            {this.props.showMenuButton &&
+              <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer" onClick={this.props.onMenuButtonClick}>
+                <MenuIcon />
+              </IconButton>
+            }
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-              <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+              <Typography className={classes.title} variant="h6" noWrap style={{ color: 'white' }}>
                 {LibzyConfig.title}
               </Typography>
             </Link>
 
             <div className={classes.grow} />
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
+            {LibzyConfig.options.search &&
+              <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+                <InputBase
+                  placeholder="Search…"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                />
               </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-              />
-            </div>
+            }
             <div className={classes.sectionDesktop}>
-              <IconButton color="inherit" href={LibzyConfig.github}>
-                <CodeIcon />
-              </IconButton>
+              <Tooltip title="Github Repository">
+                <IconButton color="inherit" href={LibzyConfig.github}>
+                  <i className="fab fa-github" />
+                </IconButton>
+              </Tooltip>
             </div>
           </Toolbar>
         </AppBar>

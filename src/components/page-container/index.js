@@ -22,14 +22,11 @@ export default class PageContainer extends Component {
       return (
         <Route path={"/" + item.path} render={() => (
           <>
-            <div className="nav" style={{ width: this.props.isMenuOpen ? 240 : 0 }}>
+            <div className="nav" style={{ width: this.props.isMenuOpen ? 240 : 0, marginLeft: this.props.isMenuOpen ? 20 : 0 }}>
               <Nav basePath={item.path} tree={item.tree} />
             </div>
             <div className="page">
-              {item.tree.map(treeItem => this.getMenuTreeRoute(treeItem, "/" + item.path))}
-              {/* {item.tree.map(treeItem => (
-                <Route path={"/" + item.path + "/" + treeItem.path} component={treeItem.component} />
-              ))} */}
+              {item.tree.map(treeItem => this.getMenuTreeRoute(treeItem, "/" + item.path))}              
             </div>
           </>
         )} />

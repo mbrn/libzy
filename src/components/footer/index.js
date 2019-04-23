@@ -8,7 +8,7 @@ export default class Footer extends Component {
         <Typography variant="subtitle2" style={{color: '#65819DAA'}}>
           This documentation developed by{" "}
           <a 
-            href="https:/github.com/mbrn/libzy"
+            href="https://github.com/mbrn/libzy"
             target="_blank"
             style={{
               color: '#b9c6d2',

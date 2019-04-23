@@ -2,15 +2,12 @@ import React from 'react';
 import { Icon, IconButton, Paper, List, ListItem, ListItemIcon, ListItemText, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import LibzyConfig from '../../../libzy.config';
-import { UnControlled as CodeMirror } from 'react-codemirror2'
-import 'codemirror/mode/javascript/javascript'
-import 'codemirror/mode/jsx/jsx'
 import { LiveProvider, LiveEditor } from 'react-live';
 
 
 export default {
   h1: (props) => <div>
-    <Typography variant="h4" {...props}/>
+    <Typography variant="h4" {...props} />
     <div style={{
       width: 50,
       borderBottom: '4px solid ' + LibzyConfig.theme.palette.primary.main,
@@ -23,9 +20,9 @@ export default {
   p: (props) => <div><Typography variant="subtitle2" {...props} /><br /></div>,
   ul: (props) => <List>{props.children}</List>,
   li: (props) => (
-    <ListItem dense style={{paddingTop: 4, paddingBottom: 4}}>
-      <ListItemIcon style={{ marginRight: 0, marginTop: 5, alignSelf: 'flex-start' }}><Icon style={{ fontSize:10 }} iconSize="small">brightness_1</Icon></ListItemIcon>
-      <ListItemText style={{paddingLeft: 8}}><Typography variant="subtitle2" {...props} /></ListItemText>
+    <ListItem dense style={{ paddingTop: 4, paddingBottom: 4 }}>
+      <ListItemIcon style={{ marginRight: 0, marginTop: 5, alignSelf: 'flex-start' }}><Icon style={{ fontSize: 10 }} iconSize="small">brightness_1</Icon></ListItemIcon>
+      <ListItemText style={{ paddingLeft: 8 }}><Typography variant="subtitle2" {...props} /></ListItemText>
     </ListItem>
   ),
   a: (props) => {
@@ -58,21 +55,28 @@ export default {
     <Paper elevation={0}
       style={{
         padding: 15,
-        color: 'rgb(132, 146, 166)',
         backgroundColor: 'white',
         borderLeft: '4px solid ' + LibzyConfig.theme.palette.primary.main,
-        margin: '0px 3px'
+        display: 'flex'
       }}>
-      {props.children.props.children}
+      <div style={{ flex: 1, alignSelf: 'center' }}>
+        <Typography variant="subtitle2">{props.children.props.children}</Typography>
+      </div>
+      <Icon style={{ fontSize: 30, opacity: 0.3, marginLeft: 10 }}>warning</Icon>
     </Paper>
     <br />
   </div>,
-  table: (props) => <table
-    style={{
-      width: '100%'
-    }}>
-    {props.children}
-  </table>,
+  table: (props) => <div style={{width: '100%', display: 'grid'}}>
+    <table
+      style={{
+        maxWidth: '100%',
+        display: 'block',
+        overflow: 'auto'
+      }}
+      >
+      {props.children}
+    </table>
+  </div>,
   thead: (props) => <thead
     style={{
       backgroundColor: 'white',

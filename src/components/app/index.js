@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import LibzyAppBar from '../app-bar';
 import PageContainer from '../page-container';
 import Footer from '../footer';
+import { withRouter } from 'react-router';
+import LibzyConfig from '../../../libzy.config';
 import './index.scss';
 
-export default class App extends Component {
+
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -13,11 +16,20 @@ export default class App extends Component {
     };
   }
 
+  showMenuButton = () => {
+    const page = LibzyConfig.menuTree.slice().reverse().find(a => this.props.location.pathname.startsWith("/" + a.path));
+
+    if(page && page.tree && page.tree.length > 0) {
+      return true;
+    }
+    return false;
+  }
+
   render() {
     return (
       <div id="container">
         <div id="main">
-          <LibzyAppBar onMenuButtonClick={() => this.setState({ isMenuOpen: !this.state.isMenuOpen })} />
+          <LibzyAppBar showMenuButton={this.showMenuButton()} onMenuButtonClick={() => this.setState({ isMenuOpen: !this.state.isMenuOpen })} />
           <div id="content">
             <PageContainer isMenuOpen={this.state.isMenuOpen} />
           </div>
@@ -29,3 +41,6 @@ export default class App extends Component {
     );
   }
 }
+
+
+export default withRouter(App)

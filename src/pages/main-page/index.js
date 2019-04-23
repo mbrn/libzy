@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Grid, Button, Typography, withStyles, Paper, Card, CardHeader, CardContent, CardActions } from '@material-ui/core';
+import LibzyConfig from '../../../libzy.config';
 
 class MainPageInner extends Component {
   render() {
@@ -8,11 +9,16 @@ class MainPageInner extends Component {
       <div className={this.props.classes.root}>
         <div className={this.props.classes.topBar}>
           <div className={this.props.classes.topBarContent}>
-            <Typography variant="h2" className="text" style={{color: 'white'}}>{this.props.config.title}</Typography>
-            <Typography variant="title" className="text" style={{color: 'white'}}>{this.props.config.subTitle}</Typography>
+            <Typography variant="h2" className="text" style={{ color: 'white' }}>{this.props.config.title}</Typography>
+            <Typography variant="title" className="text" style={{ color: 'white' }}>{this.props.config.subTitle}</Typography>
             <Link to="/docs/get-started" style={{ textDecoration: 'none' }}>
               <Button className={this.props.classes.topBarButton}>Get Started</Button>
             </Link>
+            <div style={{ padding: 20 }}>
+              <a href={this.props.config.github} >
+                <img alt="GitHub stars" src={"https://img.shields.io/github/stars/" + this.props.config.githubShort + ".svg?style=social"}></img>
+              </a>
+            </div>
           </div>
         </div>
         <div className={this.props.classes.features}>
@@ -90,7 +96,7 @@ const styles = theme => ({
     '& .text': {
       color: '#65819D99',
       padding: '5px 5px 0',
-      flex: 1,      
+      flex: 1,
     }
   },
   featureActions: {
