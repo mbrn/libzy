@@ -1,10 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import LibzyConfig from '../../libzy.config';
 
-const theme = createMuiTheme({
+const theme = (config) => createMuiTheme({
   palette: {
-    primary: LibzyConfig.theme.palette.primary,
-    secondary: LibzyConfig.theme.palette.secondary,
+    primary: config.theme.palette.primary,
+    secondary: config.theme.palette.secondary,
   },
   props: {
     MuiAppBar: {

@@ -1,20 +1,19 @@
 import React from 'react';
-import { Icon, IconButton, Paper, List, ListItem, ListItemIcon, ListItemText, Typography } from '@material-ui/core';
+import { Icon, IconButton, Paper, List, ListItem, ListItemIcon, ListItemText, Typography, withTheme } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import LibzyConfig from '../../../libzy.config';
 import { LiveProvider, LiveEditor } from 'react-live';
 
 
 export default {
-  h1: (props) => <div>
+  h1: withTheme(props => <div>
     <Typography variant="h4" {...props} />
     <div style={{
       width: 50,
-      borderBottom: '4px solid ' + LibzyConfig.theme.palette.primary.main,
+      borderBottom: '4px solid ' + props.theme.palette.primary.main,
       borderRadius: 4
     }}></div>
     <br />
-  </div>,
+  </div>),
   h2: (props) => <div><Typography variant="h6" {...props} /></div>,
   h3: (props) => <div><Typography variant="subtitle1" {...props} /></div>,
   p: (props) => <div><Typography variant="subtitle2" {...props} /><br /></div>,
@@ -25,12 +24,12 @@ export default {
       <ListItemText style={{ paddingLeft: 8 }}><Typography variant="subtitle2" {...props} /></ListItemText>
     </ListItem>
   ),
-  a: (props) => {
+  a: withTheme(props => {
     if (props.href.startsWith("http")) {
       return (
         <a href={props.href}
           style={{
-            color: LibzyConfig.theme.palette.primary.main,
+            color: props.theme.palette.primary.main,
             textDecoration: 'none',
             fontWeight: 600
           }}>
@@ -42,7 +41,7 @@ export default {
       return (
         <Link to={props.href}
           style={{
-            color: LibzyConfig.theme.palette.primary.main,
+            color: props.theme.palette.primary.main,
             textDecoration: 'none',
             fontWeight: 600
           }}>
@@ -50,13 +49,13 @@ export default {
         </Link>
       );
     }
-  },
-  blockquote: (props) => <div>
+  }),
+  blockquote: withTheme(props => <div>
     <Paper elevation={0}
       style={{
         padding: 15,
         backgroundColor: 'white',
-        borderLeft: '4px solid ' + LibzyConfig.theme.palette.primary.main,
+        borderLeft: '4px solid ' + props.theme.palette.primary.main,
         display: 'flex'
       }}>
       <div style={{ flex: 1, alignSelf: 'center' }}>
@@ -65,7 +64,7 @@ export default {
       <Icon style={{ fontSize: 30, opacity: 0.3, marginLeft: 10 }}>warning</Icon>
     </Paper>
     <br />
-  </div>,
+  </div>),
   table: (props) => <div style={{width: '100%', display: 'grid'}}>
     <table
       style={{

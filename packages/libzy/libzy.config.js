@@ -1,4 +1,4 @@
-const MainPage = require('./src/pages/main-page').default;
+const MainPage = require('libzy-lib').MainPage;
 const GetStarted = require('./src/pages/docs/get-started.md').default;
 const Install = require('./src/pages/docs/install.md').default;
 const LiveCodeExample = require('./src/pages/docs/live-code-example.mdx').default;
@@ -32,7 +32,7 @@ module.exports = {
           },
           {
             title: 'Build ready',
-            text: 'Libzy is configured ready for ES5 build. In addition, it supports scss.',
+            text: 'Libzy is configured ready for ES5 build.',
           },
 
         ]

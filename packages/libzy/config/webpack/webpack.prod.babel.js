@@ -12,9 +12,6 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        // new CleanWebpackPlugin([paths.outputPath.split('/').pop()], {
-        //     root: paths.root
-        // })
     ],
     devtool: 'source-map'
 };
