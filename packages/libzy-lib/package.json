@@ -1,6 +1,6 @@
 {
 	"name": "libzy-lib",
-	"version": "0.4.0",
+	"version": "0.4.3",
 	"description": "A boilerplate to document a library",
 	"main": "dist/index.js",
 	"scripts": {
@@ -73,8 +73,5 @@
 		"react-live": "^2.0.1",
 		"react-router-dom": "^5.0.0",
 		"styled-components": "^4.2.0"
-	},
-	"bin": {
-		"libzy": "./bin/index.js"
 	}
 }
