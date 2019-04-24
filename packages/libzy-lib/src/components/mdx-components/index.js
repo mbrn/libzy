@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, IconButton, Paper, List, ListItem, ListItemIcon, ListItemText, Typography, withTheme } from '@material-ui/core';
+import { Icon, IconButton, Paper, List, ListItem, ListItemIcon, ListItemText, Typography, Tooltip, withTheme } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { LiveProvider, LiveEditor } from 'react-live';
 
@@ -112,9 +112,11 @@ export default {
               <div style={{ flex: 1 }}>
                 {props.children}
               </div>
-              <IconButton style={{ padding: 0 }} disableRipple onClick={() => navigator.clipboard.writeText(props.children)}>
-                <Icon style={{ color: '#FFFFFF99', fontSize: 16 }}>file_copy</Icon>
-              </IconButton>
+              <Tooltip title="Copy">
+                <IconButton style={{ padding: 0 }} disableRipple onClick={() => navigator.clipboard.writeText(props.children)}>
+                  <Icon style={{ color: '#FFFFFF99', fontSize: 16 }}>file_copy</Icon>
+                </IconButton>
+              </Tooltip>
             </div>
           </Paper>
           <br />
