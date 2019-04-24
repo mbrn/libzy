@@ -1,4 +1,4 @@
-# material-table
+# libzy
 
 [![Build Status](https://travis-ci.org/mbrn/libzy-lib.svg?branch=master)](https://travis-ci.org/mbrn/libzy-lib)
 [![npm package](https://img.shields.io/npm/v/libzy-lib/latest.svg)](https://www.npmjs.com/package/libzy-lib)
