@@ -1,11 +1,14 @@
 {
 	"name": "libzy-lib",
-	"version": "0.4.6",
+	"version": "0.4.7",
 	"description": "A boilerplate to document a library",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "babel src --out-dir dist"
 	},
+	"files": [
+		"dist"
+	],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
