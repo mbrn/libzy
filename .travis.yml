@@ -10,9 +10,10 @@ jobs:
   include:
     - stage: libzy-lib publish
       node_js: "10"
-      script: cd /packages/libzy-lib && npm run build
-      before_deploy: cd packages/libzy-lib
-      after_deploy: cd ../../
+      before_script: cd packages/libzy-lib
+      script: npm run build
+      after_script: cd ../../
+      before_deploy: cd packages/libzy-lib      
       deploy:
         provider: npm
         email: "mehmetbaran@mehmetbaran.net"
@@ -20,11 +21,11 @@ jobs:
         skip_cleanup: true
         on:
           branch: master
+      after_deploy: cd ../../
     - stage: libzy publish
       node_js: "10"
       script: echo "Deploying libzy to npm ..."
-      before_deploy: cd packages/libzy
-      after_deploy: cd ../../
+      before_deploy: cd packages/libzy     
       deploy:
         provider: npm
         email: "mehmetbaran@mehmetbaran.net"
@@ -32,3 +33,4 @@ jobs:
         skip_cleanup: true
         on:
           branch: master
+      after_deploy: cd ../../
