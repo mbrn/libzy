@@ -11,7 +11,9 @@ jobs:
     - stage: libzy-lib publish
       node_js: "10"
       before_script: cd packages/libzy-lib
-      script: npm run build
+      script: 
+        - npm i
+        - npm run build        
       after_script: cd ../../
       before_deploy: cd packages/libzy-lib      
       deploy:
