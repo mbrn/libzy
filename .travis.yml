@@ -13,9 +13,7 @@ jobs:
       before_script: cd packages/libzy-lib
       script: 
         - npm i
-        - npm run build        
-      after_script: cd ../../
-      before_deploy: cd packages/libzy-lib      
+        - npm run build            
       deploy:
         provider: npm
         email: "mehmetbaran@mehmetbaran.net"
