@@ -10,7 +10,7 @@ jobs:
   include:
     - stage: libzy-lib publish
       node_js: "10"
-      script: echo "Deploying libzy-lib to npm ..."
+      script: npm run build
       before_deploy: cd packages/libzy-lib
       after_deploy: cd ../../
       deploy:
