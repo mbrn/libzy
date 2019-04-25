@@ -1,6 +1,6 @@
 {
 	"name": "libzy",
-	"version": "0.4.9",
+	"version": "0.5.0",
 	"description": "A boilerplate to document a library",
 	"main": "index.js",
 	"scripts": {
@@ -61,7 +61,8 @@
 		"webpack": "^4.30.0",
 		"webpack-cli": "^3.3.0",
 		"webpack-dev-server": "^3.3.1",
-		"webpack-merge": "^4.2.1"
+		"webpack-merge": "^4.2.1",
+		"copy-webpack-plugin": "5.0.2"
 	},
 	"dependencies": {
 		"@babel/core": "^7.4.3",
@@ -76,7 +77,7 @@
 		"react": "^16.8.6",
 		"react-codemirror2": "^5.1.0",
 		"react-dom": "^16.8.6",
-		"libzy-lib": "0.4.9"
+		"libzy-lib": "0.5.0"
 	},
 	"bin": {
 		"libzy": "./bin/index.js"

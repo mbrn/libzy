@@ -9,6 +9,9 @@ class MainPageInner extends Component {
       <div className={this.props.classes.root}>
         <div className={this.props.classes.topBar}>
           <div className={this.props.classes.topBarContent}>
+            {this.props.config.logoImage && 
+              <img src={this.props.config.logoImage} alt={this.props.config.title} className={this.props.classes.logoImage}/>
+            }
             <Typography variant="h2" className="text" style={{ color: 'white' }}>{this.props.config.title}</Typography>
             <Typography variant="title" className="text" style={{ color: 'white' }}>{this.props.config.subTitle}</Typography>
             <Link to="/docs/get-started" style={{ textDecoration: 'none' }}>
@@ -53,7 +56,9 @@ const styles = theme => ({
   topBar: {
     display: 'table',
     width: '100%',
-    height: 400,
+    minHeight: 400,
+    paddingTop: 20,
+    paddingBottom: 20,
     backgroundColor: theme.palette.primary.main,
   },
   topBarContent: {
@@ -75,6 +80,9 @@ const styles = theme => ({
       color: '#FFF',
       backgroundColor: '#DDDDDD22',
     },
+  },
+  logoImage: {
+    height: 200
   },
   features: {
     margin: 'auto',

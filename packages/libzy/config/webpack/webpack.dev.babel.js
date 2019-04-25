@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 
 import paths from './paths';
-import rules from './rules';
 
 module.exports = {
     mode: 'development',
@@ -29,7 +28,8 @@ module.exports = {
         contentBase: paths.outputPath,
         compress: true,
         hot: true,
-        historyApiFallback: true
+        historyApiFallback: true,    
+        contentBase: "./public",    
     },
     output: {
       publicPath: '/'
