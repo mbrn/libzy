@@ -5,13 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "cross-env NODE_ENV=development webpack-dev-server --open",
-		"build": "cross-env NODE_ENV=production webpack",
-		"lint": "eslint ./src/**/**.js",
-		"lint:fix": "eslint ./src/**/**.js --fix",
-		"test": "jest",
-		"test:watch": "npm run test --watch",
-		"test:cover": "npm run test --coverage",
-		"libzy": "libzy version"
+		"build": "cross-env NODE_ENV=production webpack"		
 	},
 	"author": "",
 	"license": "ISC",
