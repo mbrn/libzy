@@ -1,6 +1,6 @@
 {
 	"name": "libzy-lib",
-	"version": "0.5.1",
+	"version": "0.5.2",
 	"description": "A boilerplate to document a library",
 	"main": "dist/index.js",
 	"scripts": {

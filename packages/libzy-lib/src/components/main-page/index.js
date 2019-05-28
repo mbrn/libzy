@@ -13,7 +13,8 @@ class MainPageInner extends Component {
               <img src={this.props.config.logoImage} alt={this.props.config.title} className={this.props.classes.logoImage}/>
             }
             <Typography variant="h2" className="text" style={{ color: 'white' }}>{this.props.config.title}</Typography>
-            <Typography variant="title" className="text" style={{ color: 'white' }}>{this.props.config.subTitle}</Typography>
+            <Typography variant="body1" className="text" style={{ color: 'white' }}>{this.props.config.subTitle}</Typography>
+            <br/>
             <Link to="/docs/get-started" style={{ textDecoration: 'none' }}>
               <Button className={this.props.classes.topBarButton}>Get Started</Button>
             </Link>

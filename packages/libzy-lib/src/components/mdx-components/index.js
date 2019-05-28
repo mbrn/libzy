@@ -5,7 +5,7 @@ import { LiveProvider, LiveEditor } from 'react-live';
 
 
 export default {
-  h1: withTheme()(props => <div>
+  h1: withTheme(props => <div>
     <Typography variant="h4" {...props} />
     <div style={{
       width: 50,
@@ -24,7 +24,7 @@ export default {
       <ListItemText style={{ paddingLeft: 8 }}><Typography variant="subtitle2" {...props} /></ListItemText>
     </ListItem>
   ),
-  a: withTheme()(props => {
+  a: withTheme(props => {
     if (props.href.startsWith("http")) {
       return (
         <a href={props.href}
@@ -50,7 +50,7 @@ export default {
       );
     }
   }),
-  blockquote: withTheme()(props => <div>
+  blockquote: withTheme(props => <div>
     <Paper elevation={0}
       style={{
         padding: 15,

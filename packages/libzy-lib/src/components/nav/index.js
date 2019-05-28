@@ -53,7 +53,7 @@ class Nav extends Component {
     }
     else {
 
-      let listItemTextStyle = { };
+      let listItemTextStyle = {};
       let listItemStyle = Object.assign({}, itemStyle);
 
       if (this.props.location.pathname === "/" + path + "/" + item.path) {
@@ -88,7 +88,7 @@ class Nav extends Component {
         key="NavListKey"
         component="nav"
         disablePadding
-        style={{padding: 5}}
+        style={{ padding: 5 }}
       >
         {
           this.props.tree.map(item => {
@@ -115,4 +115,4 @@ const styles = (theme) => ({
   }
 });
 
-export default withRouter(withTheme()(withStyles(styles)(Nav)));
+export default withRouter((withStyles(styles, { withTheme: true })(Nav)));
