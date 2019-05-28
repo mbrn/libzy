@@ -1,11 +1,11 @@
 {
 	"name": "libzy",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"description": "A boilerplate to document a library",
 	"main": "index.js",
 	"scripts": {
 		"start": "cross-env NODE_ENV=development webpack-dev-server --open",
-		"build": "cross-env NODE_ENV=production webpack"		
+		"build": "cross-env NODE_ENV=production webpack"
 	},
 	"author": "",
 	"license": "ISC",
@@ -71,7 +71,7 @@
 		"react": "^16.8.6",
 		"react-codemirror2": "^5.1.0",
 		"react-dom": "^16.8.6",
-		"libzy-lib": "0.5.0"
+		"libzy-lib": "0.5.1"
 	},
 	"bin": {
 		"libzy": "./bin/index.js"

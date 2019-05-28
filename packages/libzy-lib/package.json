@@ -1,6 +1,6 @@
 {
 	"name": "libzy-lib",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"description": "A boilerplate to document a library",
 	"main": "dist/index.js",
 	"scripts": {
@@ -62,8 +62,8 @@
 	},
 	"dependencies": {
 		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
-		"@material-ui/core": "^3.9.3",
-		"@material-ui/icons": "^3.0.2",
+		"@material-ui/core": "^4.0.1",
+		"@material-ui/icons": "^4.0.1",
 		"chalk": "2.4.1",
 		"codemirror": "^5.39.2",
 		"commander": "2.19.0",
